@@ -1,7 +1,7 @@
 # Requisitos del proyecto
 
-Este proyecto implementa la especificación entregada en
-`PROJECT_SPEC_OS_SIMULATOR.md`. Sus requisitos verificables principales son:
+Este proyecto implementa la especificación documentada en este repositorio.
+Sus requisitos verificables principales son:
 
 - C sobre Linux, pthreads y monitor ncurses;
 - workers dinámicos, de cero a veinte activos;
