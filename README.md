@@ -122,9 +122,9 @@ y finalmente se libera toda la lista.
 ## Estructura
 
 ```text
-include/os.h             tipos y contexto compartido
-include/proc_list.h      interfaz de lista dinámica
-include/proc_mngr.h      creación y recolección
+src/include/os.h         tipos y contexto compartido
+src/include/proc_list.h  interfaz de lista dinámica
+src/include/proc_mngr.h  creación y recolección
 src/main.c               argumentos, inicialización, joins y cleanup
 src/os.c                 contexto, eventos y shutdown
 src/proc_list.c          lista y criterios de selección

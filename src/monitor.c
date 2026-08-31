@@ -1,4 +1,4 @@
-#include "monitor.h"
+#include "include/monitor.h"
 
 #include <ncurses.h>
 

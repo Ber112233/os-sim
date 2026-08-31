@@ -1,5 +1,5 @@
 CC ?= gcc
-CPPFLAGS := -D_POSIX_C_SOURCE=200809L -Iinclude
+CPPFLAGS := -D_POSIX_C_SOURCE=200809L -Isrc
 CFLAGS ?= -std=c11 -Wall -Wextra -Wpedantic -O2 -g
 LDFLAGS ?=
 THREAD_FLAGS := -pthread

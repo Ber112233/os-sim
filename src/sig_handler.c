@@ -1,6 +1,6 @@
-#include "sig_handler.h"
+#include "include/sig_handler.h"
 
-#include "proc_mngr.h"
+#include "include/proc_mngr.h"
 
 #include <errno.h>
 #include <stdio.h>

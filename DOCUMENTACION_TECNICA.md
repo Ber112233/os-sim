@@ -62,15 +62,15 @@ múltiples CPU, cambio de contexto real ni procesos Linux independientes.
 
 ```text
 os-sim/
-├── include/
-│   ├── monitor.h          interfaz del monitor
-│   ├── os.h               constantes, tipos y contexto compartido
-│   ├── proc_list.h        operaciones sobre la lista y selección
-│   ├── proc_mngr.h        creación y recolección de workers
-│   ├── scheduler.h        punto de entrada del scheduler
-│   ├── sig_handler.h      punto de entrada del hilo de señales
-│   └── worker.h           punto de entrada de los workers
 ├── src/
+│   ├── include/
+│   │   ├── monitor.h      interfaz del monitor
+│   │   ├── os.h           constantes, tipos y contexto compartido
+│   │   ├── proc_list.h    operaciones sobre la lista y selección
+│   │   ├── proc_mngr.h    creación y recolección de workers
+│   │   ├── scheduler.h    punto de entrada del scheduler
+│   │   ├── sig_handler.h  punto de entrada del hilo de señales
+│   │   └── worker.h       punto de entrada de los workers
 │   ├── main.c             CLI, inicialización, hilos principales y cleanup
 │   ├── monitor.c          snapshots y UI ncurses
 │   ├── os.c               contexto, eventos, nombres y shutdown
@@ -113,7 +113,7 @@ flowchart LR
 `os_context_t` es el centro de la arquitectura. Contiene la lista, el proceso
 que ocupa la CPU, la política activa, contadores, secuencias, bandera de cierre,
 estado del generador aleatorio, primitivas de sincronización y el ring buffer de
-eventos (`include/os.h`, líneas 56-77).
+eventos (`src/include/os.h`, líneas 56-77).
 
 Los módulos tienen límites claros:
 
@@ -144,7 +144,7 @@ más un hilo por proceso simulado activo o todavía no recuperado.
 
 Todo el estado mutable relevante se protege con `os->mutex`. La cabecera exige
 explícitamente que las funciones de `proc_list` se invoquen con ese mutex ya
-adquirido (`include/proc_list.h`, línea 6).
+adquirido (`src/include/proc_list.h`, línea 6).
 
 Invariantes de diseño:
 
@@ -169,7 +169,7 @@ un límite de 20 procesos.
 
 ### 5.1 `process_t`: PCB simulado
 
-La estructura de `include/os.h`, líneas 35-54, actúa como un PCB simplificado.
+La estructura de `src/include/os.h`, líneas 35-54, actúa como un PCB simplificado.
 
 | Campo | Significado |
 |---|---|
@@ -512,7 +512,7 @@ En MSYS2 debe usarse la terminal **MSYS**, con `gcc`, `make` y
 Las opciones normales son:
 
 ```text
--D_POSIX_C_SOURCE=200809L -Iinclude
+-D_POSIX_C_SOURCE=200809L -Isrc
 -std=c11 -Wall -Wextra -Wpedantic -O2 -g
 -pthread -lncurses
 ```
@@ -606,8 +606,8 @@ No hay pruebas automatizadas específicas para:
 
 | Archivo y líneas | Relevancia |
 |---|---|
-| `include/os.h:10-17` | Límites y granularidad global del simulador |
-| `include/os.h:35-77` | PCB y contexto compartido completos |
+| `src/include/os.h:10-17` | Límites y granularidad global del simulador |
+| `src/include/os.h:35-77` | PCB y contexto compartido completos |
 | `src/main.c:29-75` | Validación de CLI y quantum |
 | `src/main.c:117-126` | Bloqueo de señales antes de crear hilos |
 | `src/main.c:142-202` | Creación, join y orden de cleanup global |

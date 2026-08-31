@@ -1,7 +1,7 @@
-#include "proc_mngr.h"
+#include "include/proc_mngr.h"
 
-#include "proc_list.h"
-#include "worker.h"
+#include "include/proc_list.h"
+#include "include/worker.h"
 
 #include <errno.h>
 #include <limits.h>

@@ -1,9 +1,9 @@
-#include "monitor.h"
-#include "os.h"
-#include "proc_list.h"
-#include "proc_mngr.h"
-#include "scheduler.h"
-#include "sig_handler.h"
+#include "include/monitor.h"
+#include "include/os.h"
+#include "include/proc_list.h"
+#include "include/proc_mngr.h"
+#include "include/scheduler.h"
+#include "include/sig_handler.h"
 
 #include <errno.h>
 #include <limits.h>

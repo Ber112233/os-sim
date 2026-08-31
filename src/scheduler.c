@@ -1,7 +1,7 @@
-#include "scheduler.h"
+#include "include/scheduler.h"
 
-#include "proc_list.h"
-#include "proc_mngr.h"
+#include "include/proc_list.h"
+#include "include/proc_mngr.h"
 
 #include <errno.h>
 #include <stdbool.h>

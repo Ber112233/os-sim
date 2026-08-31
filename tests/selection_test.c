@@ -1,4 +1,4 @@
-#include "proc_list.h"
+#include "include/proc_list.h"
 
 #include <stdio.h>
 #include <stdlib.h>
